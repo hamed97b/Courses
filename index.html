@@ -1,13 +1,97 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Course</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor's Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Course</h1>
-    <p>This is an introductory course on Mathematics.</p>
-    <ul>
-        <li><a href="Chapter_00.html">Lecture 1</a></li>
-    </ul>
+    <header>
+        Professor's Website
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('research')">Research</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+    <div class="container">
+        <div id="about" class="section active">
+            <h2>About Me</h2>
+            <p>Welcome to my professional website. Here, you will find details about my academic background and experience.</p>
+        </div>
+        <div id="research" class="section">
+            <h2>Research</h2>
+            <p>My research focuses on various aspects of mathematics and its applications.</p>
+        </div>
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me via email at professor@example.com.</p>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Professor's Website. All Rights Reserved.
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
